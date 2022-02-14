@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on DATA AMBER</title>
+    <link>https://bingblackbean.github.io/Data_Amber/blog/</link>
+    <description>Recent content in Blog on DATA AMBER</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Feb 2020 11:06:48 +0600</lastBuildDate><atom:link href="https://bingblackbean.github.io/Data_Amber/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Covid-19 Dataset Preprocess</title>
+      <link>https://bingblackbean.github.io/Data_Amber/blog/covid19_clean_data/</link>
+      <pubDate>Fri, 14 Feb 2020 11:06:48 +0600</pubDate>
+      
+      <guid>https://bingblackbean.github.io/Data_Amber/blog/covid19_clean_data/</guid>
+      <description>前言 2020 年全球的关键词非COVID19 莫属。虽然现在关于病毒的起源众说纷纭，也引起了不小的外交冲突。作为数据爱好者，还是用数据说话比较靠谱。
+COVID19数据来源有很多，这里仅仅选kaggle上的数据，链接如下：https://www.kaggle.com/sudalairajkumar/novel-corona-virus-2019-dataset。 这里面的数据会持续更新，所以你拿到的数据可能会和我不同。
+该链接共包含以下数据集：
+ COVID19_line_list_data.csv(358.85 KB)&amp;ndash;&amp;gt; 关于一些每次确诊个例的报告 COVID19_open_line_list.</description>
+    </item>
+    
+  </channel>
+</rss>
