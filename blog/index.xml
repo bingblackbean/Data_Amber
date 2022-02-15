@@ -19,5 +19,16 @@ COVID19数据来源有很多，这里仅仅选kaggle上的数据，链接如下�
  COVID19_line_list_data.csv(358.85 KB)&amp;ndash;&amp;gt; 关于一些每次确诊个例的报告 COVID19_open_line_list.</description>
     </item>
     
+    <item>
+      <title>高级数据分析师最趁手的利器 （Atoti）</title>
+      <link>https://bingblackbean.github.io/Data_Amber/blog/atoti_tutorial/</link>
+      <pubDate>Fri, 14 Feb 2020 11:06:48 +0600</pubDate>
+      
+      <guid>https://bingblackbean.github.io/Data_Amber/blog/atoti_tutorial/</guid>
+      <description>高级数据分析师最趁手的利器 （Atoti） 前言 我是一个懒人。
+虽然我会plotly, matplotlib 等等很多可视化库，但是毕竟还要写代码，即便是复制粘贴过来还要改改代码呢。
+我也用BI，比如Microstrategy，Power BI，Grafana，KNIME等。KNIME是我最喜欢的，因为它包含数据分析和可视化，甚至是机器学习。 我公众号第一篇文章就是介绍的它。</description>
+    </item>
+    
   </channel>
 </rss>
