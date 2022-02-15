@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Atoti, BI on DATA AMBER</title>
+    <link>https://bingblackbean.github.io/Data_Amber/tags/atoti-bi/</link>
+    <description>Recent content in Atoti, BI on DATA AMBER</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Feb 2020 11:06:48 +0600</lastBuildDate><atom:link href="https://bingblackbean.github.io/Data_Amber/tags/atoti-bi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>高级数据分析师最趁手的利器 （Atoti）</title>
+      <link>https://bingblackbean.github.io/Data_Amber/blog/atoti_tutorial/</link>
+      <pubDate>Fri, 14 Feb 2020 11:06:48 +0600</pubDate>
+      
+      <guid>https://bingblackbean.github.io/Data_Amber/blog/atoti_tutorial/</guid>
+      <description>高级数据分析师最趁手的利器 （Atoti） 前言 我是一个懒人。
+虽然我会plotly, matplotlib 等等很多可视化库，但是毕竟还要写代码，即便是复制粘贴过来还要改改代码呢。
+我也用BI，比如Microstrategy，Power BI，Grafana，KNIME等。KNIME是我最喜欢的，因为它包含数据分析和可视化，甚至是机器学习。 我公众号第一篇文章就是介绍的它。</description>
+    </item>
+    
+  </channel>
+</rss>
