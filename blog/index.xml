@@ -6,7 +6,19 @@
     <description>Recent content in Blog on DATA AMBER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Feb 2020 11:06:48 +0600</lastBuildDate><atom:link href="https://bingblackbean.github.io/Data_Amber/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Feb 2020 11:06:48 +0600</lastBuildDate><atom:link href="https://bingblackbean.github.io/Data_Amber/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>这6个Pandas函数解决你实战项目的数据提取问题</title>
+      <link>https://bingblackbean.github.io/Data_Amber/blog/pandas_transform/</link>
+      <pubDate>Sun, 16 Feb 2020 11:06:48 +0600</pubDate>
+      
+      <guid>https://bingblackbean.github.io/Data_Amber/blog/pandas_transform/</guid>
+      <description>如果做kaggle的项目或者实际项目，我们就会发现难得不是建模，而是整理数据。 因为原始数据不会总是为了建模而存在的，而是为了数据存储的方便。
+认识长表 Long Format 比如我们最常见的交易记录，一般都是长表，纵使你有几万种商品，一般也是长表。 因为这种格式写入方便。 对于其他领域，如IoT也是如此。
+我们这里就模拟一个最简单的长表，销售记录。
+这个数据集包含了两大类产品（电器📺和水果🍌🍏）的5天的销售记录，水果类包含了香蕉🍌和苹果🍏</description>
+    </item>
+    
     <item>
       <title>Covid-19 Dataset Preprocess</title>
       <link>https://bingblackbean.github.io/Data_Amber/blog/covid19_clean_data/</link>

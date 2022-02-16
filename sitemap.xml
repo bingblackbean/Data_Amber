@@ -2,25 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://bingblackbean.github.io/Data_Amber/tags/atoti-bi/</loc>
-    <lastmod>2020-02-14T11:06:48+06:00</lastmod>
-  </url><url>
     <loc>https://bingblackbean.github.io/Data_Amber/categories/blog/</loc>
-    <lastmod>2020-02-14T11:06:48+06:00</lastmod>
+    <lastmod>2020-02-16T11:06:48+06:00</lastmod>
   </url><url>
     <loc>https://bingblackbean.github.io/Data_Amber/blog/</loc>
-    <lastmod>2020-02-14T11:06:48+06:00</lastmod>
+    <lastmod>2020-02-16T11:06:48+06:00</lastmod>
   </url><url>
     <loc>https://bingblackbean.github.io/Data_Amber/categories/</loc>
+    <lastmod>2020-02-16T11:06:48+06:00</lastmod>
+  </url><url>
+    <loc>https://bingblackbean.github.io/Data_Amber/</loc>
+    <lastmod>2020-02-16T11:06:48+06:00</lastmod>
+  </url><url>
+    <loc>https://bingblackbean.github.io/Data_Amber/categories/projects/</loc>
+    <lastmod>2020-02-16T11:06:48+06:00</lastmod>
+  </url><url>
+    <loc>https://bingblackbean.github.io/Data_Amber/blog/pandas_transform/</loc>
+    <lastmod>2020-02-16T11:06:48+06:00</lastmod>
+  </url><url>
+    <loc>https://bingblackbean.github.io/Data_Amber/tags/atoti-bi/</loc>
     <lastmod>2020-02-14T11:06:48+06:00</lastmod>
   </url><url>
     <loc>https://bingblackbean.github.io/Data_Amber/category/</loc>
     <lastmod>2020-02-14T11:06:48+06:00</lastmod>
   </url><url>
     <loc>https://bingblackbean.github.io/Data_Amber/blog/covid19_clean_data/</loc>
-    <lastmod>2020-02-14T11:06:48+06:00</lastmod>
-  </url><url>
-    <loc>https://bingblackbean.github.io/Data_Amber/</loc>
     <lastmod>2020-02-14T11:06:48+06:00</lastmod>
   </url><url>
     <loc>https://bingblackbean.github.io/Data_Amber/categories/dataset/</loc>
@@ -33,9 +39,6 @@
     <lastmod>2020-02-14T11:06:48+06:00</lastmod>
   </url><url>
     <loc>https://bingblackbean.github.io/Data_Amber/category/experience/</loc>
-    <lastmod>2020-02-14T11:06:48+06:00</lastmod>
-  </url><url>
-    <loc>https://bingblackbean.github.io/Data_Amber/categories/projects/</loc>
     <lastmod>2020-02-14T11:06:48+06:00</lastmod>
   </url><url>
     <loc>https://bingblackbean.github.io/Data_Amber/category/projects/</loc>

@@ -5,7 +5,7 @@
 
 <head>
   <meta charset="utf-8">
-<title>Categories</title>
+<title>这6个Pandas函数解决你实战项目的数据提取问题</title>
 
 
 
@@ -40,23 +40,28 @@
 
 
 <!-- Open Graph image and Twitter Card metadata -->
-<meta property="og:image" content="https://bingblackbean.github.io/Data_Amber/images/logo_small.png" />
-  <meta name="twitter:image" content="https://bingblackbean.github.io/Data_Amber/images/logo_small.png"/>
-      <meta name="twitter:card" content="summary">
-    <meta property="og:image:width" content="164">
-    <meta property="og:image:height" content="164">
-    <meta property="og:image:type" content="image/png">
-<meta name="twitter:title" content="Categories"/>
-<meta name="twitter:description" content="Explore the value of data"/>
-<meta property="og:title" content="Categories" />
-<meta property="og:description" content="Explore the value of data" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://bingblackbean.github.io/Data_Amber/categories/" />
+<meta name="twitter:title" content="这6个Pandas函数解决你实战项目的数据提取问题"/>
+<meta name="twitter:description" content="如果做kaggle的项目或者实际项目，我们就会发现难得不是建模，而是整理数据。 因为原始数据不会总是为了建模而存在的，而是为了数据存储的方便。
+认识长表 Long Format 比如我们最常见的交易记录，一般都是长表，纵使你有几万种商品，一般也是长表。 因为这种格式写入方便。 对于其他领域，如IoT也是如此。
+我们这里就模拟一个最简单的长表，销售记录。
+这个数据集包含了两大类产品（电器📺和水果🍌🍏）的5天的销售记录，水果类包含了香蕉🍌和苹果🍏"/>
+<meta property="og:title" content="这6个Pandas函数解决你实战项目的数据提取问题" />
+<meta property="og:description" content="如果做kaggle的项目或者实际项目，我们就会发现难得不是建模，而是整理数据。 因为原始数据不会总是为了建模而存在的，而是为了数据存储的方便。
+认识长表 Long Format 比如我们最常见的交易记录，一般都是长表，纵使你有几万种商品，一般也是长表。 因为这种格式写入方便。 对于其他领域，如IoT也是如此。
+我们这里就模拟一个最简单的长表，销售记录。
+这个数据集包含了两大类产品（电器📺和水果🍌🍏）的5天的销售记录，水果类包含了香蕉🍌和苹果🍏" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bingblackbean.github.io/Data_Amber/blog/pandas_transform/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2020-02-16T11:06:48+06:00" />
+<meta property="article:modified_time" content="2020-02-16T11:06:48+06:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Categories"/>
-<meta name="twitter:description" content="Explore the value of data"/>
+<meta name="twitter:title" content="这6个Pandas函数解决你实战项目的数据提取问题"/>
+<meta name="twitter:description" content="如果做kaggle的项目或者实际项目，我们就会发现难得不是建模，而是整理数据。 因为原始数据不会总是为了建模而存在的，而是为了数据存储的方便。
+认识长表 Long Format 比如我们最常见的交易记录，一般都是长表，纵使你有几万种商品，一般也是长表。 因为这种格式写入方便。 对于其他领域，如IoT也是如此。
+我们这里就模拟一个最简单的长表，销售记录。
+这个数据集包含了两大类产品（电器📺和水果🍌🍏）的5天的销售记录，水果类包含了香蕉🍌和苹果🍏"/>
 
 
 
@@ -201,85 +206,1658 @@
   <main>
     
 
-<section class="section">
+<section id="post-block" class="post-block section pb-0">
   <div class="container">
-    <div class="row">
-      
-      <div class="col-lg-4 col-md-6">
-        <article class="card post-card text-center mb-5">
-  <a href="/Data_Amber/categories/blog/">
+    <div class="row no-gutters justify-content-center">
+      <div class="col-lg-12">
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+      </div>
+      <div class="col-lg-9 mt-5">
+        <div class="text-center mb-5">
+          <div class="card-meta-tag featured">
+            
+            <a href="/Data_Amber/categoriesblog/">BLOG</a>
+            
+            <a href="/Data_Amber/categoriesprojects/">PROJECTS</a>
+            
+          </div>
+          <h1 class="mb-3">这6个Pandas函数解决你实战项目的数据提取问题</h1>
+          <div class="card-meta">
+            <em>Feb 16, 2020</em>
+            <em>
+              <a href="/Data_Amber/about/" class="card-meta-author text-primary">
+                BingBlackBean
+              </a>
+          </div>
+          </em>
+        </div>
+        <div class="content"><p>如果做kaggle的项目或者实际项目，我们就会发现难得不是建模，而是整理数据。 因为原始数据不会总是为了建模而存在的，而是为了数据存储的方便。</p>
+<h2 id="认识长表-long-format">认识长表 Long Format</h2>
+<p>比如我们最常见的交易记录，一般都是长表，纵使你有几万种商品，一般也是长表。 因为这种格式写入方便。 对于其他领域，如IoT也是如此。</p>
+<p>我们这里就模拟一个最简单的长表，销售记录。</p>
+<p>这个数据集包含了两大类产品（电器📺和水果🍌🍏）的5天的销售记录，水果类包含了香蕉🍌和苹果🍏</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;../data/sales.csv&#39;</span>
+df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(file)
+df
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Cate</th>
+      <th>Prod</th>
+      <th>Qty</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1/1/2022</td>
+      <td>水果</td>
+      <td>🍌</td>
+      <td>10</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1/2/2022</td>
+      <td>水果</td>
+      <td>🍌</td>
+      <td>20</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1/3/2022</td>
+      <td>水果</td>
+      <td>🍌</td>
+      <td>30</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1/4/2022</td>
+      <td>水果</td>
+      <td>🍌</td>
+      <td>30</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1/5/2022</td>
+      <td>水果</td>
+      <td>🍌</td>
+      <td>30</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1/1/2022</td>
+      <td>水果</td>
+      <td>🍏</td>
+      <td>110</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1/3/2022</td>
+      <td>水果</td>
+      <td>🍏</td>
+      <td>130</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1/4/2022</td>
+      <td>水果</td>
+      <td>🍏</td>
+      <td>140</td>
+      <td>2.2</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1/5/2022</td>
+      <td>水果</td>
+      <td>🍏</td>
+      <td>150</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1/2/2022</td>
+      <td>电器</td>
+      <td>📺</td>
+      <td>2</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1/3/2022</td>
+      <td>电器</td>
+      <td>📺</td>
+      <td>3</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1/5/2022</td>
+      <td>电器</td>
+      <td>📺</td>
+      <td>5</td>
+      <td>500.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>长表每一行代表一个对象的一个feature。 通常，对于长格式数据，至少包含三部分：</p>
+<ul>
+<li>ID/index 这（些）列应该是主索引</li>
+<li>Variable/Key:这（些）列应该是包含features名称</li>
+<li>Value： 这（些）列包含feature对应的值</li>
+</ul>
+<p>回到真实的案例中，比如上例，情况就微妙了。谁是ID，谁是Variables呢？</p>
+<p>取决于你的需求，你可以说Date是ID，Prod 是Variables，你可以可以反着说。</p>
+<h2 id="pivot长转宽用于数据分析">Pivot长转宽，用于数据分析</h2>
+<p>相反，wide数据就是横向信息比较多，也就是多个feature/ Variables 都在同一行展示。</p>
+<p>回到本例，假如我们的ID是Date，feature就是不同的Product。</p>
+<p>我们通过将长表格式转换为宽表格式来进一步说明。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">date_wide_df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>pivot(index<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Date&#39;</span>,columns<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Prod&#39;</span>,values<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Qty&#39;</span>)
+date_wide_df
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Prod</th>
+      <th>🍌</th>
+      <th>🍏</th>
+      <th>📺</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1/1/2022</th>
+      <td>10.0</td>
+      <td>110.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1/2/2022</th>
+      <td>20.0</td>
+      <td>NaN</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1/3/2022</th>
+      <td>30.0</td>
+      <td>130.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>1/4/2022</th>
+      <td>30.0</td>
+      <td>140.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1/5/2022</th>
+      <td>30.0</td>
+      <td>150.0</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>或者你非要认为ID是Prod，feature就是Date。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">prod_wide_df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>pivot(index<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Prod&#39;</span>,columns<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Date&#39;</span>,values<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Qty&#39;</span>)
+prod_wide_df
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Date</th>
+      <th>1/1/2022</th>
+      <th>1/2/2022</th>
+      <th>1/3/2022</th>
+      <th>1/4/2022</th>
+      <th>1/5/2022</th>
+    </tr>
+    <tr>
+      <th>Prod</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>🍌</th>
+      <td>10.0</td>
+      <td>20.0</td>
+      <td>30.0</td>
+      <td>30.0</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>🍏</th>
+      <td>110.0</td>
+      <td>NaN</td>
+      <td>130.0</td>
+      <td>140.0</td>
+      <td>150.0</td>
+    </tr>
+    <tr>
+      <th>📺</th>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>可以看到，不同的Index和Column分配会有不同的结果，影响是之后的数据统计时是按行还是按列，其实他们就是一个转置。</p>
+<ul>
+<li>当我们采用日期作为索引时，我们可以“横向”对比所有产品的销售记录。</li>
+<li>当我们采用产品作为索引时，我们可以“横向”看到不同日期的销售记录。</li>
+</ul>
+<p>这里我们还注意到一些细节，就是wide数据容易有缺失值NaN。</p>
+<p>从这里你就可以看到Long和Wide对应的价值：</p>
+<ul>
+<li>long表简单，容易原始记录。</li>
+<li>wide表多维，适合进一步分析</li>
+</ul>
+<h2 id="多层索引pivot">多层索引Pivot</h2>
+<p>你可以添加多个index来打造多层级索引，<em><strong>但是需要确保最后一个层级，每个特征最多只有一个value。</strong></em></p>
+<p>比如你可以组合Cate和Prod，但是不可以只用Cate进行Pivot操作。</p>
+<p>同样的，对于feature/variables，也可以用多层索引。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cate_prod_wide_df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>pivot(index<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Cate&#39;</span>,<span style="color:#e6db74">&#39;Prod&#39;</span>],columns<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Date&#39;</span>,values<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Qty&#39;</span>,<span style="color:#e6db74">&#39;Price&#39;</span>])
+cate_prod_wide_df
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead tr th {
+    text-align: left;
+}
+
+.dataframe thead tr:last-of-type th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="5" halign="left">Qty</th>
+      <th colspan="5" halign="left">Price</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Date</th>
+      <th>1/1/2022</th>
+      <th>1/2/2022</th>
+      <th>1/3/2022</th>
+      <th>1/4/2022</th>
+      <th>1/5/2022</th>
+      <th>1/1/2022</th>
+      <th>1/2/2022</th>
+      <th>1/3/2022</th>
+      <th>1/4/2022</th>
+      <th>1/5/2022</th>
+    </tr>
+    <tr>
+      <th>Cate</th>
+      <th>Prod</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">水果</th>
+      <th>🍌</th>
+      <td>10.0</td>
+      <td>20.0</td>
+      <td>30.0</td>
+      <td>30.0</td>
+      <td>30.0</td>
+      <td>1.1</td>
+      <td>1.1</td>
+      <td>1.2</td>
+      <td>1.2</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>🍏</th>
+      <td>110.0</td>
+      <td>NaN</td>
+      <td>130.0</td>
+      <td>140.0</td>
+      <td>150.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>2.2</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>电器</th>
+      <th>📺</th>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>500.0</td>
+      <td>500.0</td>
+      <td>NaN</td>
+      <td>500.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>pivot(index<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Date&#39;</span>,columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Cate&#39;</span>,<span style="color:#e6db74">&#39;Prod&#39;</span>],values<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Qty&#39;</span>,<span style="color:#e6db74">&#39;Price&#39;</span>])
+
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead tr th {
+    text-align: left;
+}
+
+.dataframe thead tr:last-of-type th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3" halign="left">Qty</th>
+      <th colspan="3" halign="left">Price</th>
+    </tr>
+    <tr>
+      <th>Cate</th>
+      <th colspan="2" halign="left">水果</th>
+      <th>电器</th>
+      <th colspan="2" halign="left">水果</th>
+      <th>电器</th>
+    </tr>
+    <tr>
+      <th>Prod</th>
+      <th>🍌</th>
+      <th>🍏</th>
+      <th>📺</th>
+      <th>🍌</th>
+      <th>🍏</th>
+      <th>📺</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1/1/2022</th>
+      <td>10.0</td>
+      <td>110.0</td>
+      <td>NaN</td>
+      <td>1.1</td>
+      <td>2.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1/2/2022</th>
+      <td>20.0</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>1.1</td>
+      <td>NaN</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <th>1/3/2022</th>
+      <td>30.0</td>
+      <td>130.0</td>
+      <td>3.0</td>
+      <td>1.2</td>
+      <td>2.0</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <th>1/4/2022</th>
+      <td>30.0</td>
+      <td>140.0</td>
+      <td>NaN</td>
+      <td>1.2</td>
+      <td>2.2</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1/5/2022</th>
+      <td>30.0</td>
+      <td>150.0</td>
+      <td>5.0</td>
+      <td>1.2</td>
+      <td>2.0</td>
+      <td>500.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h2 id="melt-宽表转长表用于写回数据">Melt 宽表转长表，用于写回数据</h2>
+<p>经常在kaggle项目或者实战项目中，我们要求分析预测后的数据需要转为长表，实际项目中是要写回到数据库里面。</p>
+<p>既然长表可以转宽表，那么宽表如何转长表呢？ Melt。</p>
+<p>Melt函数的参数中，<em><strong>id_vars表示该列不动，其他的列会变成列名-值，这样配对的形式</strong></em>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cate_prod_wide_df<span style="color:#f92672">.</span>reset_index()<span style="color:#f92672">.</span>melt(id_vars<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Cate&#39;</span>,<span style="color:#e6db74">&#39;Prod&#39;</span>],var_name<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Qty/Price&#39;</span>,<span style="color:#e6db74">&#39;Date&#39;</span>])<span style="color:#f92672">.</span>dropna()
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Cate</th>
+      <th>Prod</th>
+      <th>Qty/Price</th>
+      <th>Date</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>水果</td>
+      <td>🍌</td>
+      <td>Qty</td>
+      <td>1/1/2022</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>水果</td>
+      <td>🍏</td>
+      <td>Qty</td>
+      <td>1/1/2022</td>
+      <td>110.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>水果</td>
+      <td>🍌</td>
+      <td>Qty</td>
+      <td>1/2/2022</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>电器</td>
+      <td>📺</td>
+      <td>Qty</td>
+      <td>1/2/2022</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>水果</td>
+      <td>🍌</td>
+      <td>Qty</td>
+      <td>1/3/2022</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>水果</td>
+      <td>🍏</td>
+      <td>Qty</td>
+      <td>1/3/2022</td>
+      <td>130.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>电器</td>
+      <td>📺</td>
+      <td>Qty</td>
+      <td>1/3/2022</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>水果</td>
+      <td>🍌</td>
+      <td>Qty</td>
+      <td>1/4/2022</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>水果</td>
+      <td>🍏</td>
+      <td>Qty</td>
+      <td>1/4/2022</td>
+      <td>140.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>水果</td>
+      <td>🍌</td>
+      <td>Qty</td>
+      <td>1/5/2022</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>水果</td>
+      <td>🍏</td>
+      <td>Qty</td>
+      <td>1/5/2022</td>
+      <td>150.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>电器</td>
+      <td>📺</td>
+      <td>Qty</td>
+      <td>1/5/2022</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>水果</td>
+      <td>🍌</td>
+      <td>Price</td>
+      <td>1/1/2022</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>水果</td>
+      <td>🍏</td>
+      <td>Price</td>
+      <td>1/1/2022</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>水果</td>
+      <td>🍌</td>
+      <td>Price</td>
+      <td>1/2/2022</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>电器</td>
+      <td>📺</td>
+      <td>Price</td>
+      <td>1/2/2022</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>水果</td>
+      <td>🍌</td>
+      <td>Price</td>
+      <td>1/3/2022</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>水果</td>
+      <td>🍏</td>
+      <td>Price</td>
+      <td>1/3/2022</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>电器</td>
+      <td>📺</td>
+      <td>Price</td>
+      <td>1/3/2022</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>水果</td>
+      <td>🍌</td>
+      <td>Price</td>
+      <td>1/4/2022</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>水果</td>
+      <td>🍏</td>
+      <td>Price</td>
+      <td>1/4/2022</td>
+      <td>2.2</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>水果</td>
+      <td>🍌</td>
+      <td>Price</td>
+      <td>1/5/2022</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>水果</td>
+      <td>🍏</td>
+      <td>Price</td>
+      <td>1/5/2022</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>电器</td>
+      <td>📺</td>
+      <td>Price</td>
+      <td>1/5/2022</td>
+      <td>500.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>可以看到我们的确转回了长表，与原来长表不同的是，这次转的更长了，它将Qty和Price也融化成一列了。</p>
+<h2 id="更高端的-wide_to_long">更高端的 wide_to_long</h2>
+<p>有没有可能melt回来原始的数据格式呢？ 可以，但是需要费点功夫。</p>
+<p>费点功夫的原因有两点:</p>
+<ul>
+<li>原始长表在转宽表之前没有进行整理</li>
+<li>该实例比较复杂，因为有多层index</li>
+</ul>
+<p>我们可以将<code>Qty</code>和<code>Price</code>的多层级索引先融合成单层级，然后调用wide_to_long 函数。</p>
+<p><code>wide_to_long</code>里面的参数很复杂，基本看官方文档还是模棱两可，这里做出说明。</p>
+<ul>
+<li>
+<p>结合我们的例子来看，带有值的列名带有前缀（<code>Qty</code>或者时<code>Price</code>），这个就是<code>stubnames</code>（根名）。我们就要解析出这个“根”来。</p>
+</li>
+<li>
+<p><code>suffix</code> 就是告诉我们如何解析，采用正则表达式，我们的时间戳格式是 d-m-y，所以对应的正则就是<code>'\d+-\d+-\d+'</code></p>
+</li>
+<li>
+<p><code>i</code>表示哪些列是索引。</p>
+</li>
+<li>
+<p><code>j</code>表示除去根变量，剩余的字符对应的列名，这里就是<code>Date</code></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cate_prod_wide_df<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> [str(i)<span style="color:#f92672">+</span>str(j<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;/&#39;</span>,<span style="color:#e6db74">&#39;-&#39;</span>)) <span style="color:#66d9ef">for</span> (i,j) <span style="color:#f92672">in</span> cate_prod_wide_df<span style="color:#f92672">.</span>columns]
+cate_prod_wide_df<span style="color:#f92672">.</span>reset_index()
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Cate</th>
+      <th>Prod</th>
+      <th>Qty1-1-2022</th>
+      <th>Qty1-2-2022</th>
+      <th>Qty1-3-2022</th>
+      <th>Qty1-4-2022</th>
+      <th>Qty1-5-2022</th>
+      <th>Price1-1-2022</th>
+      <th>Price1-2-2022</th>
+      <th>Price1-3-2022</th>
+      <th>Price1-4-2022</th>
+      <th>Price1-5-2022</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>水果</td>
+      <td>🍌</td>
+      <td>10.0</td>
+      <td>20.0</td>
+      <td>30.0</td>
+      <td>30.0</td>
+      <td>30.0</td>
+      <td>1.1</td>
+      <td>1.1</td>
+      <td>1.2</td>
+      <td>1.2</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>水果</td>
+      <td>🍏</td>
+      <td>110.0</td>
+      <td>NaN</td>
+      <td>130.0</td>
+      <td>140.0</td>
+      <td>150.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>2.2</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>电器</td>
+      <td>📺</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>500.0</td>
+      <td>500.0</td>
+      <td>NaN</td>
+      <td>500.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pd<span style="color:#f92672">.</span>wide_to_long(df<span style="color:#f92672">=</span>cate_prod_wide_df<span style="color:#f92672">.</span>reset_index(),stubnames<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Qty&#39;</span>,<span style="color:#e6db74">&#39;Price&#39;</span>],i<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Cate&#39;</span>,<span style="color:#e6db74">&#39;Prod&#39;</span>],j<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Date&#39;</span>,suffix<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\d+-\d+-\d+&#39;</span>)
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Qty</th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <th>Cate</th>
+      <th>Prod</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="10" valign="top">水果</th>
+      <th rowspan="5" valign="top">🍌</th>
+      <th>1-1-2022</th>
+      <td>10.0</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>1-2-2022</th>
+      <td>20.0</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>1-3-2022</th>
+      <td>30.0</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>1-4-2022</th>
+      <td>30.0</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>1-5-2022</th>
+      <td>30.0</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">🍏</th>
+      <th>1-1-2022</th>
+      <td>110.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1-2-2022</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1-3-2022</th>
+      <td>130.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1-4-2022</th>
+      <td>140.0</td>
+      <td>2.2</td>
+    </tr>
+    <tr>
+      <th>1-5-2022</th>
+      <td>150.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">电器</th>
+      <th rowspan="5" valign="top">📺</th>
+      <th>1-1-2022</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1-2-2022</th>
+      <td>2.0</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <th>1-3-2022</th>
+      <td>3.0</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <th>1-4-2022</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1-5-2022</th>
+      <td>5.0</td>
+      <td>500.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>特别需要强调的是，上面这个长表和原始长表看着很相似，但是对于pandas来说，却是不同。</p>
+<p>上面这个表的row idnex 是多层级的（先是cate类，再是Prod),索引和后续处理就更方便。</p>
+<h2 id="更友好的stack">更友好的Stack</h2>
+<p>高端函数够高端，但是对于我们这个案例不够友好。</p>
+<p>对于我们上述需求，Stack函数可以一键搞定，Stack就是把列旋转90度，变成行。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cate_prod_wide_df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>pivot(index<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Cate&#39;</span>,<span style="color:#e6db74">&#39;Prod&#39;</span>],columns<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Date&#39;</span>,values<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Qty&#39;</span>,<span style="color:#e6db74">&#39;Price&#39;</span>])
+cate_prod_wide_df<span style="color:#f92672">.</span>stack()
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Qty</th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <th>Cate</th>
+      <th>Prod</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="9" valign="top">水果</th>
+      <th rowspan="5" valign="top">🍌</th>
+      <th>1/1/2022</th>
+      <td>10.0</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>1/2/2022</th>
+      <td>20.0</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>1/3/2022</th>
+      <td>30.0</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>1/4/2022</th>
+      <td>30.0</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>1/5/2022</th>
+      <td>30.0</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">🍏</th>
+      <th>1/1/2022</th>
+      <td>110.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1/3/2022</th>
+      <td>130.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1/4/2022</th>
+      <td>140.0</td>
+      <td>2.2</td>
+    </tr>
+    <tr>
+      <th>1/5/2022</th>
+      <td>150.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">电器</th>
+      <th rowspan="3" valign="top">📺</th>
+      <th>1/2/2022</th>
+      <td>2.0</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <th>1/3/2022</th>
+      <td>3.0</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <th>1/5/2022</th>
+      <td>5.0</td>
+      <td>500.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>对于上面的数据，我们还可以选择某个层级旋转。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cate_prod_wide_df<span style="color:#f92672">.</span>stack(level<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Qty</th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <th>Cate</th>
+      <th>Prod</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="9" valign="top">水果</th>
+      <th rowspan="5" valign="top">🍌</th>
+      <th>1/1/2022</th>
+      <td>10.0</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>1/2/2022</th>
+      <td>20.0</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>1/3/2022</th>
+      <td>30.0</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>1/4/2022</th>
+      <td>30.0</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>1/5/2022</th>
+      <td>30.0</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">🍏</th>
+      <th>1/1/2022</th>
+      <td>110.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1/3/2022</th>
+      <td>130.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1/4/2022</th>
+      <td>140.0</td>
+      <td>2.2</td>
+    </tr>
+    <tr>
+      <th>1/5/2022</th>
+      <td>150.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">电器</th>
+      <th rowspan="3" valign="top">📺</th>
+      <th>1/2/2022</th>
+      <td>2.0</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <th>1/3/2022</th>
+      <td>3.0</td>
+      <td>500.0</td>
+    </tr>
+    <tr>
+      <th>1/5/2022</th>
+      <td>5.0</td>
+      <td>500.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h2 id="回到开始的unstack">回到开始的Unstack</h2>
+<p>既然stack是将列转行，那么unstack就是将行专列，这个不就和pivot类似了吗？</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>unstack()
+</code></pre></div><pre><code>Date   0     1/1/2022
+       1     1/2/2022
+       2     1/3/2022
+       3     1/4/2022
+       4     1/5/2022
+       5     1/1/2022
+       6     1/3/2022
+       7     1/4/2022
+       8     1/5/2022
+       9     1/2/2022
+       10    1/3/2022
+       11    1/5/2022
+Cate   0           水果
+       1           水果
+       2           水果
+       3           水果
+       4           水果
+       5           水果
+       6           水果
+       7           水果
+       8           水果
+       9           电器
+       10          电器
+       11          电器
+Prod   0            🍌
+       1            🍌
+       2            🍌
+       3            🍌
+       4            🍌
+       5            🍏
+       6            🍏
+       7            🍏
+       8            🍏
+       9            📺
+       10           📺
+       11           📺
+Qty    0           10
+       1           20
+       2           30
+       3           30
+       4           30
+       5          110
+       6          130
+       7          140
+       8          150
+       9            2
+       10           3
+       11           5
+Price  0          1.1
+       1          1.1
+       2          1.2
+       3          1.2
+       4          1.2
+       5          2.0
+       6          2.0
+       7          2.2
+       8          2.0
+       9        500.0
+       10       500.0
+       11       500.0
+dtype: object
+</code></pre>
+<p>然而，并不是！</p>
+<p>原因我上面提到过，原始长表在转宽表之前没有进行整理。</p>
+<p>虽然原始长表有层级信息，但是没有被整理出来。</p>
+<p>所以对于原始长表，我们建议首先进行构造多层级索引，然后再unstack。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>set_index([<span style="color:#e6db74">&#39;Cate&#39;</span>,<span style="color:#e6db74">&#39;Prod&#39;</span>,<span style="color:#e6db74">&#39;Date&#39;</span>])<span style="color:#f92672">.</span>unstack()
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead tr th {
+    text-align: left;
+}
+
+.dataframe thead tr:last-of-type th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="5" halign="left">Qty</th>
+      <th colspan="5" halign="left">Price</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Date</th>
+      <th>1/1/2022</th>
+      <th>1/2/2022</th>
+      <th>1/3/2022</th>
+      <th>1/4/2022</th>
+      <th>1/5/2022</th>
+      <th>1/1/2022</th>
+      <th>1/2/2022</th>
+      <th>1/3/2022</th>
+      <th>1/4/2022</th>
+      <th>1/5/2022</th>
+    </tr>
+    <tr>
+      <th>Cate</th>
+      <th>Prod</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">水果</th>
+      <th>🍌</th>
+      <td>10.0</td>
+      <td>20.0</td>
+      <td>30.0</td>
+      <td>30.0</td>
+      <td>30.0</td>
+      <td>1.1</td>
+      <td>1.1</td>
+      <td>1.2</td>
+      <td>1.2</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>🍏</th>
+      <td>110.0</td>
+      <td>NaN</td>
+      <td>130.0</td>
+      <td>140.0</td>
+      <td>150.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>2.2</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>电器</th>
+      <th>📺</th>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>500.0</td>
+      <td>500.0</td>
+      <td>NaN</td>
+      <td>500.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>我们同样可以针对某一层索引进行旋转，比如下面的代码就和我们开篇的pivot功效一致。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">.</span>set_index([<span style="color:#e6db74">&#39;Date&#39;</span>,<span style="color:#e6db74">&#39;Cate&#39;</span>,<span style="color:#e6db74">&#39;Prod&#39;</span>])<span style="color:#f92672">.</span>unstack(level<span style="color:#f92672">=-</span><span style="color:#ae81ff">3</span>)
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead tr th {
+    text-align: left;
+}
+
+.dataframe thead tr:last-of-type th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="6" halign="left">Qty</th>
+      <th colspan="6" halign="left">Price</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Date</th>
+      <th>1/1/2022</th>
+      <th>1/2/2022</th>
+      <th>1/3/2022</th>
+      <th>1/4/2022</th>
+      <th>1/5/2022</th>
+      <th>1/6/2022</th>
+      <th>1/1/2022</th>
+      <th>1/2/2022</th>
+      <th>1/3/2022</th>
+      <th>1/4/2022</th>
+      <th>1/5/2022</th>
+      <th>1/6/2022</th>
+    </tr>
+    <tr>
+      <th>Cate</th>
+      <th>Prod</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">水果</th>
+      <th>🍌</th>
+      <td>10.0</td>
+      <td>20.0</td>
+      <td>30.0</td>
+      <td>30.0</td>
+      <td>30.0</td>
+      <td>30.0</td>
+      <td>1.1</td>
+      <td>1.1</td>
+      <td>1.2</td>
+      <td>1.2</td>
+      <td>1.2</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>🍏</th>
+      <td>110.0</td>
+      <td>NaN</td>
+      <td>130.0</td>
+      <td>140.0</td>
+      <td>150.0</td>
+      <td>160.0</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>2.2</td>
+      <td>2.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>电器</th>
+      <th>📺</th>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>NaN</td>
+      <td>500.0</td>
+      <td>500.0</td>
+      <td>NaN</td>
+      <td>500.0</td>
+      <td>500.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h2 id="孤零零的pivot_table">孤零零的Pivot_table</h2>
+<p>为什么Pivot_table 要单独拿出来讲呢？因为它涉及到聚合函数，也就是它不是“变形”，而是“<del>变性</del>”。也就是用了之后，可能就回不去了，因为它做了统计。</p>
+<p>回到我们开篇，我们提到Pivot确保最后一个层级的index，每个变量的值都是唯一的。</p>
+<p>如果有多个值呢？比如我们只用Cate进行宽转长呢？ 那就需要Pivot的升级版，Pivot_table。</p>
+<p>它允许对重复值进行聚合，至于聚合方式就你自己指定了：均值，求和等等都行。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pt_agg <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>pivot_table(index<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Cate&#39;</span>],columns<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Date&#39;</span>,values<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Qty&#39;</span>,aggfunc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mean&#39;</span>)
+pt_agg
+</code></pre></div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Date</th>
+      <th>1/1/2022</th>
+      <th>1/2/2022</th>
+      <th>1/3/2022</th>
+      <th>1/4/2022</th>
+      <th>1/5/2022</th>
+    </tr>
+    <tr>
+      <th>Cate</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>水果</th>
+      <td>60.0</td>
+      <td>20.0</td>
+      <td>80.0</td>
+      <td>85.0</td>
+      <td>90.0</td>
+    </tr>
+    <tr>
+      <th>电器</th>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>NaN</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h2 id="总结">总结</h2>
+<p>本文介绍了实战项目中最常用的几个数据转换函数，建议组合搭配使用。</p>
+<ul>
+<li>原始长表，建议首先建立行索引（多级更好），然后可以随意的使用unstack和stack。</li>
+<li>原始长表，不想建立行索引，可以直接Pivot或者pivot_table，这样既能建立好索引了，还能转换为宽表，用于分析</li>
+<li>melt是轻量版的wide_to_long</li>
+<li>wide_to_long 用于转换表面上是单层index，实际上是多层index的数据。列名一般为<code>AAAxxx_BBBxxx_CCCxxx</code></li>
+</ul>
+</div>
+        <div class="single-post-meta">
+          
+          <ul class="social-links is-circle-filled list-unstyled list-inline mt-5">
+            <li class="list-inline-item">
+              <a href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fbingblackbean.github.io%2fData_Amber%2fblog%2fpandas_transform%2f" target="_blank" class="facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://twitter.com/intent/tweet/?text=%e8%bf%996%e4%b8%aaPandas%e5%87%bd%e6%95%b0%e8%a7%a3%e5%86%b3%e4%bd%a0%e5%ae%9e%e6%88%98%e9%a1%b9%e7%9b%ae%e7%9a%84%e6%95%b0%e6%8d%ae%e6%8f%90%e5%8f%96%e9%97%ae%e9%a2%98&amp;url=https%3a%2f%2fbingblackbean.github.io%2fData_Amber%2fblog%2fpandas_transform%2f" target="_blank"
+                class="twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.pinterest.com/pin/?text=&amp;url=https%3a%2f%2fbingblackbean.github.io%2fData_Amber%2fblog%2fpandas_transform%2f" target="_blank" class="pinterest">
+                <i class="fab fa-pinterest"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-12 mt-5">
+        <div class="single-post-similer section">
+          <div class="row mt-4">
+            <div class="col-12 mb-5">
+              <h2 class="text-center font-secondary text-uppercase">Similer Post</h2>
+            </div>
+
+            
+            
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <article class="card post-card text-center mb-5">
+  <a href="/Data_Amber/blog/pandas_transform/">
+    
+    
     
   </a>
 
   <div class="card-body">
     <h5 class="mt-3">
-      <a class="post-title" href="/Data_Amber/categories/blog/">BLOG</a>
+      <a class="post-title" href="/Data_Amber/blog/pandas_transform/">这6个Pandas函数解决你实战项目的数据提取问题</a>
     </h5>
-    <p></p>
+    <p>如果做kaggle的项目或者实际项目，我们就会发现难得不是建模，而是整理数据。 因为原始数据不会总是为了建模而存在的，而是为了数据存储的方便。
+认识长表 Long Format 比如我们最常见的交易记录，一般都是长表，纵使你有几万种商品，一般也是长表。 因为这种格式写入方便。 对于其他领域，如IoT也是如此。
+我们这里就模拟一个最简单的长表，销售记录。
+这个数据集包含了两大类产品（电器📺和水果🍌🍏）的5天的销售记录，水果类包含了香蕉🍌和苹果🍏</p>
   </div>
 </article>
-      </div>
-      
-      <div class="col-lg-4 col-md-6">
-        <article class="card post-card text-center mb-5">
-  <a href="/Data_Amber/categories/projects/">
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <article class="card post-card text-center mb-5">
+  <a href="/Data_Amber/blog/covid19_clean_data/">
+    
+    
+    
+    
+    
+    
+    
+    
+    <img loading="lazy" decoding="async" class="img-fluid w-100" src="/Data_Amber/images/COVID_EDA_8_1_hud8e78367ad93ae5e597d2b8441b840b7_66281_1110x0_resize_box_3.png" alt="post image"
+      width="1485" height="717">
+    
     
   </a>
 
   <div class="card-body">
     <h5 class="mt-3">
-      <a class="post-title" href="/Data_Amber/categories/projects/">PROJECTS</a>
+      <a class="post-title" href="/Data_Amber/blog/covid19_clean_data/">Covid-19 Dataset Preprocess</a>
     </h5>
-    <p></p>
+    <p>前言 2020 年全球的关键词非COVID19 莫属。虽然现在关于病毒的起源众说纷纭，也引起了不小的外交冲突。作为数据爱好者，还是用数据说话比较靠谱。
+COVID19数据来源有很多，这里仅仅选kaggle上的数据，链接如下：https://www.kaggle.com/sudalairajkumar/novel-corona-virus-2019-dataset。 这里面的数据会持续更新，所以你拿到的数据可能会和我不同。
+该链接共包含以下数据集：
+ COVID19_line_list_data.csv(358.85 KB)&ndash;&gt; 关于一些每次确诊个例的报告 COVID19_open_line_list.</p>
   </div>
 </article>
-      </div>
-      
-      <div class="col-lg-4 col-md-6">
-        <article class="card post-card text-center mb-5">
-  <a href="/Data_Amber/categories/dataset/">
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <article class="card post-card text-center mb-5">
+  <a href="/Data_Amber/blog/atoti_tutorial/">
+    
+    
+    
+    
+    
+    
+    
+    
+    <img loading="lazy" decoding="async" class="img-fluid w-100" src="/Data_Amber/images/atoti_title_hu033975c5c0995982704b6c6e22fba784_71182_1110x0_resize_box_3.png" alt="post image"
+      width="1920" height="877">
+    
     
   </a>
 
   <div class="card-body">
     <h5 class="mt-3">
-      <a class="post-title" href="/Data_Amber/categories/dataset/">DATASET</a>
+      <a class="post-title" href="/Data_Amber/blog/atoti_tutorial/">高级数据分析师最趁手的利器 （Atoti）</a>
     </h5>
-    <p></p>
+    <p>前言 我是一个懒人。
+虽然我会plotly, matplotlib 等等很多可视化库，但是毕竟还要写代码，即便是复制粘贴过来还要改改代码呢。
+我也用BI，比如Microstrategy，Power BI，Grafana，KNIME等。KNIME是我最喜欢的，因为它包含数据分析和可视化，甚至是机器学习。 我公众号第一篇文章就是介绍的它。
+但是数据源的复杂性，往往又得让我不得不依赖于python，尤其是做数据处理，分析，以及建模。我最常用的就是Jupyter家族，notebook或者lab。
+今天重磅安利一款我喜欢的jupyter BI 插件，让我使用python处理数据时，又能轻松创建可视化的需求，甚至说发布临时dashboard给客户、领导看。</p>
   </div>
 </article>
+            </div>
+            
+          </div>
+        </div>
       </div>
-      
-      <div class="col-lg-4 col-md-6">
-        <article class="card post-card text-center mb-5">
-  <a href="/Data_Amber/categories/experience/">
-    
-  </a>
-
-  <div class="card-body">
-    <h5 class="mt-3">
-      <a class="post-title" href="/Data_Amber/categories/experience/">EXPERIENCE</a>
-    </h5>
-    <p></p>
-  </div>
-</article>
-      </div>
-      
-      <div class="col-lg-4 col-md-6">
-        <article class="card post-card text-center mb-5">
-  <a href="/Data_Amber/categories/tools/">
-    
-  </a>
-
-  <div class="card-body">
-    <h5 class="mt-3">
-      <a class="post-title" href="/Data_Amber/categories/tools/">TOOLS</a>
-    </h5>
-    <p></p>
-  </div>
-</article>
-      </div>
-      
     </div>
   </div>
 </section>
